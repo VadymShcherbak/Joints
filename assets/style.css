@@ -1622,6 +1622,18 @@ a {
   width: 1600px;
 }
 
+.burger {
+  display: none;
+}
+.burger i {
+  font-size: 36px;
+  color: #000;
+}
+
+.col-bottom {
+  margin-bottom: 30px;
+}
+
 .main-header {
   margin-bottom: 35px;
 }
@@ -1677,33 +1689,31 @@ a {
   padding-top: 47px;
   padding-bottom: 30px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-}
-
-.header-middle-right {
-  display: flex;
-  flex-grow: 1;
-  justify-content: flex-end;
 }
 
 .header-form {
   display: flex;
+  flex-grow: 1;
+  max-width: 900px;
   border: 2px solid #CFCFCF;
+  margin-left: 40px;
 }
 .header-form input[type=text] {
-  width: 850px;
+  width: 90%;
   padding: 25px 30px;
   border: none;
   font-family: "Poppins", sans-serif;
   font-size: 24px;
 }
-.header-form input[type=submit] {
-  padding: 15px 40px;
+.header-form button[type=submit] {
+  width: 10%;
   border: none;
-  background-image: url(img/Header/SearchIcon.png);
-  background-position: center;
-  background-repeat: no-repeat;
   background-color: #fff;
+}
+.header-form button[type=submit] i {
+  font-size: 26px;
 }
 
 .header-bottom {
@@ -1713,12 +1723,19 @@ a {
 
 .header-bottom-menu {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   min-height: 100px;
 }
+.header-bottom-menu li {
+  flex-grow: 1;
+}
+.header-bottom-menu li:not(:last-child) {
+  border-right: 1px solid #BBBBBB;
+}
 .header-bottom-menu a {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  padding: 15px 45px;
   font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: 600;
@@ -1726,12 +1743,17 @@ a {
   color: #000;
   transition: color 0.4s ease;
 }
+.header-bottom-menu a i {
+  font-size: 34px;
+  margin-right: 12px;
+  color: #ef261e;
+}
 .header-bottom-menu a:hover {
   color: #ef261e;
 }
 
 .highlights {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .banner {
@@ -1751,13 +1773,14 @@ a {
 
 .banner-inner {
   position: absolute;
-  bottom: 14px;
-  left: 19px;
-  padding: 10px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 20px;
 }
 .banner-inner h5 {
   font-family: "Poppins", sans-serif;
-  font-size: 27px;
+  font-size: 25px;
   line-height: 1.2;
   color: #fff;
 }
@@ -1810,6 +1833,34 @@ a {
 .information-inner {
   background-color: #fff;
   box-shadow: 0 0px 7px rgba(33, 30, 31, 0.07);
+}
+
+@media (max-width: 1200px) {
+  .header-bottom-menu a {
+    padding: 10px;
+  }
+}
+@media (max-width: 1024px) {
+  .burger {
+    display: block;
+  }
+
+  .header-bottom {
+    display: none;
+  }
+
+  .header-form {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .main-header-date {
+    display: none;
+  }
+
+  .main-header-sign {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

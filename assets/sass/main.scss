@@ -68,6 +68,19 @@ a {
     width: 1600px;
 }
 
+.burger {
+    display: none;
+
+    i {
+        font-size: 36px;
+        color: #000;
+    }
+}
+
+.col-bottom {
+    margin-bottom: 30px;
+}
+
 // ------------------------------------------------------------------------------------------------
 // M A I N - H E A D E R
 // ------------------------------------------------------------------------------------------------
@@ -140,34 +153,33 @@ a {
     padding-top: 47px;
     padding-bottom: 30px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-}
-
-.header-middle-right {
-    display: flex;
-    flex-grow: 1;
-    justify-content: flex-end;
 }
 
 .header-form {
     display: flex;
+    flex-grow: 1;
+    max-width: 900px;
     border: 2px solid #CFCFCF;
+    margin-left: 40px;
 
     input[type="text"] {
-        width: 850px;
+        width: 90%;
         padding: 25px 30px;
         border: none;
         font-family: $body-second-font;
         font-size: 24px;
     }
 
-    input[type="submit"] {
-        padding: 15px 40px;
+    button[type="submit"] {
+        width: 10%;
         border: none;
-        background-image: url(img/Header/SearchIcon.png);
-        background-position: center;
-        background-repeat: no-repeat;
         background-color: #fff;
+
+        i {
+            font-size: 26px;
+        }
     }
 }
 
@@ -182,19 +194,33 @@ a {
 
 .header-bottom-menu {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     min-height: 100px;
 
-    a {
-        display: inline-block;
+    li {
+        flex-grow: 1;
 
+        &:not(:last-child) {
+            border-right: 1px solid #BBBBBB;
+        }
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        padding: 15px 45px;
         font-family: $body-second-font;
         font-size: 18px;
         font-weight: 600;
         text-transform: uppercase;
         color: #000;
         transition: color .4s ease;
+
+        i {
+            font-size: 34px;
+            margin-right: 12px;
+            color: $red;
+        }
 
         &:hover {
             color: $red;
@@ -207,7 +233,7 @@ a {
 // ------------------------------------------------------------------------------------------------
 
 .highlights {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 .banner {
@@ -235,13 +261,14 @@ a {
 
 .banner-inner {
     position: absolute;
-    bottom: 14px;
-    left: 19px;
-    padding: 10px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 20px;
 
     h5 {
         font-family: $body-second-font;
-        font-size: 27px;
+        font-size: 25px;
         line-height: 1.2;
         color: #fff;
     }
@@ -308,4 +335,74 @@ a {
 .information-inner {
     background-color: #fff;
     box-shadow: 0 0px 7px rgb(33 30 31 / 7%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ------------------------------------------------------------------------------------------------
+// M E D I A
+// ------------------------------------------------------------------------------------------------
+
+@media (max-width: 1200px) {
+
+    .header-bottom-menu {
+
+        a {
+            padding: 10px;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .burger {
+        display: block;
+    }
+
+    .header-bottom {
+        display: none;
+    }
+
+    .header-form {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .main-header-date {
+        display: none;
+    }
+
+    .main-header-sign {
+        display: none;
+    }
 }
