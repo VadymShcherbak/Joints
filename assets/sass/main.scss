@@ -6,6 +6,7 @@
 // ------------------------------------------------------------------------------------------------
 
 $body-second-font: 'Poppins', sans-serif;
+$title-font: 'Metropolis', sans-serif;
 $subtitle-small: 'Alegreya', serif;
 
 // ------------------------------------------------------------------------------------------------
@@ -40,7 +41,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Metropolis', sans-serif;
+    font-family: $title-font;
     font-weight: 600;
     color: #000;
     margin-bottom: 20px;
@@ -65,7 +66,8 @@ a {
 }
 
 .container {
-    width: 1600px;
+    max-width: 1600px;
+    width: 100%;
 }
 
 .burger {
@@ -77,8 +79,16 @@ a {
     }
 }
 
+.row-bottom {
+    margin-bottom: 30px;
+}
+
 .col-bottom {
     margin-bottom: 30px;
+}
+
+.colortext {
+    color: $red;
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -302,26 +312,88 @@ a {
 // I N F O R M A T I O N
 // ------------------------------------------------------------------------------------------------
 
+.information {
+    margin-bottom: 60px;
+}
+
 .information-head {
+    position: relative;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    min-height: 56px;
+    border: 2px solid #F1F1F1;
+    background-color: #fff;
+    margin-bottom: 10px;
+
+    h3 {
+        font-size: 24px;
+        text-transform: uppercase;
+        padding-left: 25px;
+        margin-bottom: 0;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 7px;
+            background-color: $red;
+        }
+    }
 }
 
 .information-menu {
     display: flex;
+
+    a {
+        font-family: $title-font;
+        font-size: 20px;
+        font-weight: 600;
+        color: #000;
+        transition: color .3s ease;
+        padding: 10px 22px;
+
+        &:hover {
+            color: $red;
+        }
+    }
+}
+
+.burger-info {
+    display: none;
+    font-size: 30px;
+    color: #000;
+    padding: 15px;
+}
+
+.information-inner {
+    background-color: #fff;
+    box-shadow: 0 0px 7px rgb(33 30 31 / 7%);
 }
 
 .information-item {
     padding: 45px;
 
+    h4 {
+        margin-bottom: 10px;
+    }
+
         a {
             font-size: 28px;
+            color: #000;
         }
+}
 
-        span {
-            font-size: 16px;
-            font-weight: 400;
-        }
+.information-date {
+    display: flex;
+    margin-bottom: 20px;
+    
+    span {
+        font-size: 16px;
+        font-weight: 400;
+    }
 }
 
 .information-img {
@@ -332,10 +404,93 @@ a {
     }
 }
 
-.information-inner {
-    background-color: #fff;
-    box-shadow: 0 0px 7px rgb(33 30 31 / 7%);
+.date-one {
+    margin-right: 27px;
+
+    i {
+        margin-right: 12px;
+    }
 }
+
+.date-two {
+    margin-right: 23px;
+
+    i {
+        margin-right: 7px;
+    }
+}
+
+.date-three {
+
+    i {
+        margin-right: 5px;
+    }
+}
+
+.row-shadow {
+    box-shadow: 0 10px 11px rgb(33 30 31 / 10%);
+}
+
+// ------------------------------------------
+// P R O D U C T
+// ------------------------------------------
+
+.product-inner {
+    background-color: #fff;
+}
+
+.col-right {
+        border-right: 2px solid #E5E5E5; ;
+}
+
+.product-item {
+    padding: 26px 42px;
+
+    h6 {
+        font-size: 22px;
+    }
+}
+
+.product-date {
+    font-family: $subtitle-small;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.product-img {
+
+    img {
+        width: 100%;
+    }
+}
+
+.product-raiting {
+    display: flex;
+
+    p {
+        font-weight: 600;
+        color: #000;
+        margin-right: 30px;
+        margin-bottom: 0;
+    }
+}
+
+// ------------------------------------------
+// P R O S T A T E - T E X T
+// ------------------------------------------
+.prostate-text {
+    background-color: #fff;
+    padding: 56px 40px;
+
+    p {
+        font-family: 'Myriad Pro', sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        color: #8c8c8c;
+    }
+}
+
+
 
 
 
@@ -396,6 +551,16 @@ a {
     }
 }
 
+@media (max-width: 900px) {
+
+    .information-head {
+
+        h3 {
+            font-size: 20px;
+        }
+    }
+}
+
 @media (max-width: 768px) {
 
     .main-header-date {
@@ -404,5 +569,20 @@ a {
 
     .main-header-sign {
         display: none;
+    }
+}
+
+@media (max-width: 620px) {
+
+    .main-header-top {
+        display: none;
+    }
+
+    .information-menu {
+        display: none;
+    }
+
+    .burger-info {
+        display: block;
     }
 }
